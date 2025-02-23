@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+       
+
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Roboto", serif;
+        }
+
+        body{
+
+            width:100%;
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg,#0a0a0a,#3a4452);
+        }
+
+        .calculator{
+            border:1px solid #717377;
+            padding: 20px;
+            border-radius: 16px;
+            background: transparent;
+            box-shadow: 0px 3px 18px rgba(113,115,119,0.5);
+        }
+      
+
+        input{
+            width:320px;
+            background:transparent; 
+            text-align: right;
+            padding: 24px;
+            box-shadow: -8px 8px 15px rgba(255,255,255,0.1);
+           
+            font-size: 40px;
+            margin:10px;
+            cursor: pointer;
+            color:#ffffff;
+        }
+
+        button{
+            cursor: pointer;
+            width: 60px;
+            height:60px;
+            margin: 10px;
+            border:none;
+            border-radius: 50px;
+            background:transparent; 
+            color:#ffffff;
+            font-size: 20px;
+            box-shadow: -8px 8px 15px rgba(255,255,255,0.1)
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="calculator">
+    
+        <input type="text" placeholder="0" id="inp" readonly="">
+
+    
+    <div>
+        <button onclick="clr()">AC</button>
+        <button onclick="del()">DE</button>
+        <button onclick="select('%')">%</button>
+        <button onclick="select('/')">/</button>
+    </div>
+    <div>
+        <button onclick="select(7)">7</button>
+        <button onclick="select(8)">8</button>
+        <button onclick="select(9)">9</button>
+        <button onclick="select('*')">*</button>
+    </div>
+    <div>
+        <button onclick="select(4)">4</button>
+        <button onclick="select(5)">5</button>
+        <button onclick="select(6)">6</button>
+        <button onclick="select('-')">-</button>
+    </div>
+    <div>
+        <button onclick="select(1)">1</button>
+        <button onclick="select(2)">2</button>
+        <button onclick="select(3)">3</button>
+        <button onclick="select('+')">+</button>
+    </div>
+    <div>
+        <button onclick="select('00')">00</button>
+        <button onclick="select(0)">0</button>
+        <button onclick="select('.')">.</button>
+        <button onclick="equal()">=</button>
+    </div>
+
+</div>
+
+
+<script>
+
+    var inpu=document.getElementById("inp");
+
+    function select(a)
+    {
+        inpu.value= inpu.value + a; 
+    }
+
+    function equal()
+    {
+        inpu.value=eval(inpu.value);
+    }
+
+    function clr()
+    {
+        inpu.value="";
+    }
+
+    function del()
+    {
+        inpu.value= inpu.value.substr(0,inpu.value.length-1);
+    }
+
+    function sqrRoot()
+    {
+        inpu.value = Math.sqrt(inpu.value);
+    }
+
+   
+</script>
+</body>
+</html>
